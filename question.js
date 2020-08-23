@@ -20,7 +20,7 @@ let score = 0;
 
 const $btn = document.getElementsByTagName('button');
 const btnLength = $btn.length;
-
+// クイズ問題のセットアップ
 const setupQuiz = () => {
   document.getElementById('js-question').textContent = quiz[quizIndex].question;
   let btnIndex = 0;
@@ -31,7 +31,7 @@ const setupQuiz = () => {
 }
 
 setupQuiz();
-
+// 解答ボタン実行時にイベント発火
 const clickHandler = (e) => {
   if(quiz[quizIndex].correct === e.target.textContent){
     window.alert('正解');
@@ -39,9 +39,9 @@ const clickHandler = (e) => {
   } else {
     window.alert('不正解');
   }
-
+// 次の問題に移行する
   quizIndex++;
-
+  
   if(quizIndex < quizLength) {
     setupQuiz();
   } else {
